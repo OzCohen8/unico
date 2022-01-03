@@ -1,8 +1,7 @@
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
-import 'package:rxdart/rxdart.dart';
 
 class NotificationApi{
-  static final _notifications = FlutterLocalNotificationsPlugin();
+  static final FlutterLocalNotificationsPlugin _notifications = FlutterLocalNotificationsPlugin();
   // static final onNotifications = BehaviorSubject<String?>();
 
   static Future _notificationDetailes() async =>
@@ -12,6 +11,7 @@ class NotificationApi{
       "channel name",
       channelDescription: "channel description",
       importance: Importance.max,
+      playSound: true
     ),
     iOS: IOSNotificationDetails(),
   );
