@@ -160,7 +160,7 @@ class _LoginState extends State<Login> {
   }
 
   void _showResetPasswordPanel({required context}){
-    showModalBottomSheet(context: context, builder: (context){
+    showModalBottomSheet <void>(context: context, builder: (BuildContext context){
       return Form(
         key: _resetFormKey,
         autovalidateMode: AutovalidateMode.onUserInteraction,
@@ -169,12 +169,14 @@ class _LoginState extends State<Login> {
           child: Column(
             children: <Widget>[
               buildEmailForPasswordReset(),
-              ElevatedButton(onPressed: () {
+              ElevatedButton(onPressed: () async {
                 if(_resetFormKey.currentState!.validate()) {
                   AuthServices _auth = AuthServices();
-                  _auth.resetPassword(email: emailForPasswordController.text, context: context);
-                  emailForPasswordController.clear();
-                  Fluttertoast.showToast(msg:"A password reset link has been sent to ${emailForPasswordController.text}",toastLength: Toast.LENGTH_LONG);
+                  bool check = await _auth.resetPassword(email: emailForPasswordController.text, context: context);
+                  if(check){
+                    Fluttertoast.showToast(msg:"A password reset link has been sent to ${emailForPasswordController.text}",toastLength: Toast.LENGTH_LONG);
+                    emailForPasswordController.clear();
+                  }
                 }
               }, child: const Text("Reset Password")),
             ],

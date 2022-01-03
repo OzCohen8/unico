@@ -79,12 +79,13 @@ class AuthServices extends ChangeNotifier{
   }
 
   // reset password with email
-  Future<void> resetPassword({required String email, required BuildContext context}) async{
+  Future<bool> resetPassword({required String email, required BuildContext context}) async{
     try{
       await _auth.sendPasswordResetEmail(email: email);
       Navigator.pop(context);
+      return true;
     }
-    on FirebaseAuthException catch (e) { Fluttertoast.showToast(msg: e.message!,toastLength: Toast.LENGTH_LONG);}
+    on FirebaseAuthException catch (e) {Fluttertoast.showToast(msg: e.message!,toastLength: Toast.LENGTH_LONG); return false;}
   }
 
   // sign out
