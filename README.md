@@ -1,16 +1,24 @@
 # unico
 
-A new Flutter project.
+Social-network fashion application which connect people and emphasizes uniqueness of each member
 
-## Getting Started
+## Application features
 
-This project is a starting point for a Flutter application.
+1. user sign-up and sign-in feature
+1.1 In case of forgotten password there is an reset password email feature
+1.2  setting personal info such as password name etc.
 
-A few resources to get you started if this is your first Flutter project:
+2. user can rate and follow other unico users
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+3. users can upload profile pictures and posts.
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+4. users can search for other users and look at their pages
+
+5. users can follow others users
+
+6. users can chat (IM) with users
+
+7. light and dark Design feature
+
+
+

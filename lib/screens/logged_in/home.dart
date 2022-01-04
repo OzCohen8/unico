@@ -33,8 +33,8 @@ class _HomeState extends State<Home> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children:   <Widget>[
-                  Text("Home", style: TextStyle(fontSize: 24),),
-                  Padding(
+                  const Text("Home", style: TextStyle(fontSize: 24),),
+                  const Padding(
                     padding: EdgeInsets.symmetric(horizontal: 12.0),
                     child: Text("here the user will see all the lasts designs posted by accounts he follows"),
                   ),
